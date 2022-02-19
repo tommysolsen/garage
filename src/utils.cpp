@@ -4,6 +4,8 @@
 #define EXTERNAL_LED 27
 #define GARAGE_PORT 22
 
+#define MANUAL_TRIGGER 21
+
 void initiatedPing(int port)
 {
   digitalWrite(port, HIGH);
@@ -52,4 +54,10 @@ void signalAuthenticationFailure()
   delay(100);
   digitalWrite(EXTERNAL_LED, LOW);
   delay(100);
+}
+
+void enableManualOpenClose()
+{
+  pinMode(MANUAL_TRIGGER, INPUT_PULLUP);
+  attachInterrupt(MANUAL_TRIGGER, toggleGarage, RISING);
 }

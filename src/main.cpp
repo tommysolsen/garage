@@ -170,6 +170,8 @@ void setup()
     advertising->setMinPreferred(0x12);
     BLEDevice::startAdvertising();
 
+    enableManualOpenClose();
+
     Serial.printf("BLE Server ready: %s\r\n", SERVICE_UUID);
     initiatedPing(POWER_LED);
     digitalWrite(POWER_LED, LOW);

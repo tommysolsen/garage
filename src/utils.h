@@ -7,3 +7,5 @@ void initiatedPing(int port);
 void toggleGarage();
 
 void signalAuthenticationFailure();
+
+void enableManualOpenClose();
